@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<robot name="jb2a" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:property name="pi" value="3.1415"/>
+
+
+  <!-- Materials -->
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+  <material name="gray">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0 0 1 1"/>
+  </material>
+
+  <material name="blue_light">
+    <color rgba="0 0 0.5 1"/>
+  </material>
+
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+  <material name="red_light">
+    <color rgba="0.5 0 0 1"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0 1 0 1"/>
+  </material>
+
+  <material name="green_light">
+    <color rgba="0 0.5 0 1"/>
+  </material>
+
+  <material name="cyan">
+    <color rgba="1 1 0 1"/>
+  </material>
+
+  <material name="cyan_light">
+    <color rgba="0.5 0.5 0 1"/>
+  </material>
+
+  <material name="turcoise">
+    <color rgba="0 1 1 1"/>
+  </material>
+
+  <material name="turcoise_light">
+    <color rgba="0 0.5 0.5 1"/>
+  </material>
+
+  <material name="pink">
+    <color rgba="1 0 1 1"/>
+  </material>
+
+  <material name="pink_light">
+    <color rgba="0.5 0 0.5 1"/>
+  </material>
+
+  <!-- Base -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/base.stl"/>
+      </geometry>
+      <material name="gray"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <link name="ball_bearings1">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/bearings.stl"/>
+      </geometry>
+      <material name="black"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="base_bearings_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ball_bearings1"/>
+    <origin rpy="0 0 0" xyz="0 0 27"/>
+  </joint>
+
+  <link name="ball_bearings2">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/bearings.stl"/>
+      </geometry>
+      <material name="black"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="base_bearings2_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ball_bearings2"/>
+    <origin rpy="0 0 0" xyz="0 0 34.5"/>
+  </joint>
+
+
+  <!-- rotational ensemble -->
+  <link name="piece100">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/Piece100.stl"/>
+      </geometry>
+      <material name="gray"/>
+      <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="base_piece100_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="piece100"/>
+    <origin rpy="0 0 0" xyz="0 0 36"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="${-pi/2}" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+
+  <link name="piece11">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/Piece11.stl"/>
+      </geometry>
+      <material name="gray"/>
+      <origin rpy="${pi/2} 0 0" xyz="-40 1.25 35.5"/>
+    </visual>
+  </link>
+
+  <joint name="piece100_piece11_joint" type="fixed">
+    <parent link="piece100"/>
+    <child link="piece11"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="piece11sym">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/Piece11sym.stl"/>
+      </geometry>
+      <material name="gray"/>
+      <origin rpy="${pi/2} 0 0" xyz="40 1.25 35.5"/>
+    </visual>
+  </link>
+
+  <joint name="piece100_piece11sym_joint" type="fixed">
+    <parent link="piece100"/>
+    <child link="piece11sym"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+
+  <!-- Arm1 -->
+  <link name="arm1-piece12">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece12.stl"/>
+      </geometry>
+      <material name="green"/>
+      <origin rpy="-${pi/2} ${pi/2} 0" xyz="-89.25 -1 0.5"/>
+    </visual>
+  </link>
+
+  <joint name="piece11_arm1-piece12_joint" type="revolute">
+    <parent link="piece11"/>
+    <child link="arm1-piece12"/>
+    <origin rpy="0 ${pi/2} 0" xyz="30 0 38"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="${-pi/2}" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+
+  <link name="arm1-piece15">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece15.stl"/>
+      </geometry>
+      <material name="cyan"/>
+      <origin rpy="-${pi/2} ${pi/2} 0" xyz="-79.25 -0.7 0.5"/>
+    </visual>
+  </link>
+
+  <joint name="piece11sym_arm1-piece15_joint" type="revolute">
+    <parent link="piece11sym"/>
+    <child link="arm1-piece15"/>
+    <origin rpy="0 ${pi/2} 0" xyz="-30 0 38"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="${-pi/2}" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+
+  <link name="arm1-piece13-1">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece13.stl"/>
+      </geometry>
+      <material name="red"/>
+      <origin rpy="0 ${pi/2} 0" xyz="-68 -11 -29"/>
+    </visual>
+  </link>
+
+  <joint name="arm1-piece12_arm1-piece13-1_joint" type="fixed">
+    <parent link="arm1-piece12"/>
+    <child link="arm1-piece13-1"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="arm1-piece13-2">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece13.stl"/>
+      </geometry>
+      <material name="red"/>
+      <origin rpy="0 ${pi/2} 0" xyz="-68 11 -29"/>
+    </visual>
+  </link>
+
+  <joint name="arm1-piece12_arm1-piece13-2_joint" type="fixed">
+    <parent link="arm1-piece12"/>
+    <child link="arm1-piece13-2"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="arm1-piece13-3">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece13.stl"/>
+      </geometry>
+      <material name="red"/>
+      <origin rpy="0 ${pi/2} 0" xyz="-130 0 -29"/>
+    </visual>
+  </link>
+
+  <joint name="arm1-piece12_arm1-piece13-3_joint" type="fixed">
+    <parent link="arm1-piece12"/>
+    <child link="arm1-piece13-3"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+
+  <!-- Arm2 -->
+  <link name="arm2-piece16">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm2-Piece16.stl"/>
+      </geometry>
+      <material name="pink"/>
+      <origin rpy="0 -${pi/2} ${pi/2}" xyz="-59 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="arm1-piece12_arm2-piece16_joint" type="revolute">
+    <parent link="arm1-piece12"/>
+    <child link="arm2-piece16"/>
+    <origin rpy="0 0 0" xyz="-180 0 10"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="${-pi/2}" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+
+  <link name="arm2-piece17-1">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm2-Piece17.stl"/>
+      </geometry>
+      <material name="red"/>
+      <origin rpy="0 ${pi/2} 0" xyz="-60 -11 -29"/>
+    </visual>
+  </link>
+
+  <joint name="arm2-piece16_arm2-piece17-1_joint" type="fixed">
+    <parent link="arm2-piece16"/>
+    <child link="arm2-piece17-1"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="arm2-piece17-2">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm2-Piece17.stl"/>
+      </geometry>
+      <material name="red"/>
+      <origin rpy="0 ${pi/2} 0" xyz="-60 11 -29"/>
+    </visual>
+  </link>
+
+  <joint name="arm2-piece16_arm2-piece17-2_joint" type="fixed">
+    <parent link="arm2-piece16"/>
+    <child link="arm2-piece17-2"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="arm2-piece14">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm2-Piece14.stl"/>
+      </geometry>
+      <material name="turcoise"/>
+      <origin rpy="0 -${pi/2} ${pi/2}" xyz="-59 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="arm2-piece17_arm2-piece14_joint" type="fixed">
+    <parent link="arm2-piece17-1"/>
+    <child link="arm2-piece14"/>
+    <origin rpy="0 0 0" xyz="0 0 -60"/>
+  </joint>
+
+  <!-- Arm3 -->
+  <link name="arm3-piece17">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm3-Piece17.stl"/>
+      </geometry>
+      <material name="pink_light"/>
+      <origin rpy="-${pi/2} -${pi/2} 0" xyz="-25 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="arm2-piece14_arm3-piece17_joint" type="revolute">
+    <parent link="arm2-piece14"/>
+    <child link="arm3-piece17"/>
+    <origin rpy="0 0 0" xyz="-120 0 -10"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="${-pi/2}" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+
+  <link name="arm3-piece18">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm3-Piece18.stl"/>
+      </geometry>
+      <material name="cyan_light"/>
+      <origin rpy="-${pi/2} -${pi/2} 0" xyz="-25 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="arm3-piece17_arm3-piece18_joint" type="fixed">
+    <parent link="arm3-piece17"/>
+    <child link="arm3-piece18"/>
+    <origin rpy="0 0 0" xyz="0 0 80"/>
+  </joint>
+
+  <link name="arm3-piece19">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_urdf_tutorial/meshes/arm3-Piece19.stl"/>
+      </geometry>
+      <material name="red_light"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="arm3-piece18_arm3-piece19_joint" type="fixed">
+    <parent link="arm3-piece18"/>
+    <child link="arm3-piece19"/>
+    <origin rpy="${pi/2} ${pi/2} 0" xyz="-57.5 0 -40"/>
+  </joint>
+
+</robot>
