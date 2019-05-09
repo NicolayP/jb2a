@@ -14,12 +14,12 @@ Todo list, those objectives can be decomposed in simpler problems if necessary.
 
 ## Links
 
--[The arm servos](https://www.amazon.fr/dp/B0716V3WNH/ref=pe_3044141_185740131_TE_item)
--[The hand servos][1]
--[Adfruit pwm board tutorial](https://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/overview)
--[ROS tutorial](http://wiki.ros.org/ROS/Tutorials)
--[ROS cheatsheet](https://github.com/ros/cheatsheet/releases)
--[ROS urdf tutorial](https://github.com/ros/urdf_tutorial)
--[ROS tf tutorial](http://wiki.ros.org/tf/Tutorials)
+- [The arm servos](https://www.amazon.fr/dp/B0716V3WNH/ref=pe_3044141_185740131_TE_item)
+- [The hand servos][1]
+- [Adfruit pwm board tutorial](https://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/overview)
+- [ROS tutorial](http://wiki.ros.org/ROS/Tutorials)
+- [ROS cheatsheet](https://github.com/ros/cheatsheet/releases)
+- [ROS urdf tutorial](https://github.com/ros/urdf_tutorial)
+- [ROS tf tutorial](http://wiki.ros.org/tf/Tutorials)
 
 [1]: https://www.amazon.fr/dp/B07KQC5R4H/ref=pe_3044141_185740131_TE_item
