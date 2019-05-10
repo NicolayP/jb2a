@@ -29,3 +29,24 @@ Todo list, those objectives can be decomposed in simpler problems if necessary.
 - Fred, why is the orientation of servo from arm one opposit to the one in arm2 ? Couldn't we gain a couple of robot workinspace.
 - Fred, I would need the object to be placed in the correct orientation in theire own reference frame, i should also get the distance from the reference frame to the rotational axis. 
 
+## Start
+
+1. Install ros kinetict. (follow the tutorials)
+2. Create a catkin workspace.
+3. copy all cat packages in the src folder of the new catkin workspace.
+
+### Packages
+
+1. jb2a description:
+	```
+	$ roscd jb2a_description
+	$ roslaunch jb2a_description display.launch model:=urdf/jb2a.urdf.xarco
+	```
+2. Simple robot control:
+	```
+	$ roscd jb2a_description
+	$ roslaunch jb2a_description display2.launch model:=urdf/jb2a.urdf.xarco
+	```
+   The source code can be found in the src file.
+
+
