@@ -69,7 +69,7 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/base.stl"/>
+        <mesh filename="package://jb2a_description/meshes/base.stl"/>
       </geometry>
       <material name="gray"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -79,7 +79,7 @@
   <link name="ball_bearings1">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/bearings.stl"/>
+        <mesh filename="package://jb2a_description/meshes/bearings.stl"/>
       </geometry>
       <material name="black"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -95,7 +95,7 @@
   <link name="ball_bearings2">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/bearings.stl"/>
+        <mesh filename="package://jb2a_description/meshes/bearings.stl"/>
       </geometry>
       <material name="black"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -113,7 +113,7 @@
   <link name="piece100">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/Piece100.stl"/>
+        <mesh filename="package://jb2a_description/meshes/Piece100.stl"/>
       </geometry>
       <material name="gray"/>
       <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
@@ -131,7 +131,7 @@
   <link name="piece11">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/Piece11.stl"/>
+        <mesh filename="package://jb2a_description/meshes/Piece11.stl"/>
       </geometry>
       <material name="gray"/>
       <origin rpy="${pi/2} 0 0" xyz="-40 1.25 35.5"/>
@@ -147,7 +147,7 @@
   <link name="piece11sym">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/Piece11sym.stl"/>
+        <mesh filename="package://jb2a_description/meshes/Piece11sym.stl"/>
       </geometry>
       <material name="gray"/>
       <origin rpy="${pi/2} 0 0" xyz="40 1.25 35.5"/>
@@ -165,7 +165,7 @@
   <link name="arm1-piece12">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece12.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm1-Piece12.stl"/>
       </geometry>
       <material name="green"/>
       <origin rpy="-${pi/2} ${pi/2} 0" xyz="-89.25 -1 0.5"/>
@@ -183,7 +183,7 @@
   <link name="arm1-piece15">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece15.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm1-Piece15.stl"/>
       </geometry>
       <material name="cyan"/>
       <origin rpy="-${pi/2} ${pi/2} 0" xyz="-79.25 -0.7 0.5"/>
@@ -201,7 +201,7 @@
   <link name="arm1-piece13-1">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece13.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm1-Piece13.stl"/>
       </geometry>
       <material name="red"/>
       <origin rpy="0 ${pi/2} 0" xyz="-68 -11 -29"/>
@@ -217,7 +217,7 @@
   <link name="arm1-piece13-2">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece13.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm1-Piece13.stl"/>
       </geometry>
       <material name="red"/>
       <origin rpy="0 ${pi/2} 0" xyz="-68 11 -29"/>
@@ -233,7 +233,7 @@
   <link name="arm1-piece13-3">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm1-Piece13.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm1-Piece13.stl"/>
       </geometry>
       <material name="red"/>
       <origin rpy="0 ${pi/2} 0" xyz="-130 0 -29"/>
@@ -251,7 +251,7 @@
   <link name="arm2-piece16">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm2-Piece16.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm2-Piece16.stl"/>
       </geometry>
       <material name="pink"/>
       <origin rpy="0 -${pi/2} ${pi/2}" xyz="-59 0 0"/>
@@ -269,7 +269,7 @@
   <link name="arm2-piece17-1">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm2-Piece17.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm2-Piece17.stl"/>
       </geometry>
       <material name="red"/>
       <origin rpy="0 ${pi/2} 0" xyz="-60 -11 -29"/>
@@ -285,7 +285,7 @@
   <link name="arm2-piece17-2">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm2-Piece17.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm2-Piece17.stl"/>
       </geometry>
       <material name="red"/>
       <origin rpy="0 ${pi/2} 0" xyz="-60 11 -29"/>
@@ -301,7 +301,7 @@
   <link name="arm2-piece14">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm2-Piece14.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm2-Piece14.stl"/>
       </geometry>
       <material name="turcoise"/>
       <origin rpy="0 -${pi/2} ${pi/2}" xyz="-59 0 0"/>
@@ -318,7 +318,7 @@
   <link name="arm3-piece17">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm3-Piece17.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm3-Piece17.stl"/>
       </geometry>
       <material name="pink_light"/>
       <origin rpy="-${pi/2} -${pi/2} 0" xyz="-25 0 0"/>
@@ -336,7 +336,7 @@
   <link name="arm3-piece18">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm3-Piece18.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm3-Piece18.stl"/>
       </geometry>
       <material name="cyan_light"/>
       <origin rpy="-${pi/2} -${pi/2} 0" xyz="-25 0 0"/>
@@ -352,7 +352,7 @@
   <link name="arm3-piece19">
     <visual>
       <geometry>
-        <mesh filename="package://my_urdf_tutorial/meshes/arm3-Piece19.stl"/>
+        <mesh filename="package://jb2a_description/meshes/arm3-Piece19.stl"/>
       </geometry>
       <material name="red_light"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
