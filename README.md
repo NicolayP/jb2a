@@ -1,4 +1,4 @@
-# jp2a
+# jb2a
 Robotic arm project
 
 ## TODO
