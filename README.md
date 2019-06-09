@@ -26,6 +26,7 @@ Todo list, those objectives can be decomposed in simpler problems if necessary.
 
 ## Remarks
 
+- remarque petit gros
 - Fred, why is the orientation of servo from arm one opposit to the one in arm2 ? Couldn't we gain a couple of robot workinspace.
 - Fred, I would need the object to be placed in the correct orientation in theire own reference frame, i should also get the distance from the reference frame to the rotational axis. 
 
